@@ -19,9 +19,11 @@ def search_job():
         title = item.select_one('.project-title span').text
         price = item.select_one('.budget span').text
         abstract = item.select_one('.project-details').text
-        if ('minuto' in time) or ('Agora' in time):
-            print(f'\n\n{time}\n{title} => {price}{abstract}\n', end=("_"*130))
-    
+        #if ('minuto' in time) or ('Agora' in time):
+        print("\n",time)
+        print(title," => ",price,abstract)
+        print("_"*120)
+            
 schedule.every(interval).minutes.do(search_job)
 
 if __name__ == '__main__':
